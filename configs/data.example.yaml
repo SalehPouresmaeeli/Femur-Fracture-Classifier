@@ -1,0 +1,19 @@
+# Template for configs/data.yaml, the shared settings of every experiment.
+#
+#   copy configs\data.example.yaml configs\data.yaml       (Linux/macOS: cp)
+#
+# configs/data.yaml is git-ignored, so the names of your files and the patients you
+# exclude are never committed. Relative paths are resolved against the configs/ folder,
+# so "../data" is the project's data/ folder no matter where you run from.
+seed: 42
+output_dir: ../outputs
+
+data:
+  excel_path: ../data/table.xlsx       # clinical table (see data/README.md)
+  image_dir: ../data/images            # folder with the .vti images
+  excluded_patients: []                # patient ids to leave out, e.g. those without usable images
+  label_scheme: binary                 # Neck (SC, TC) = 0, Trochanteric (IT, PT) = 1
+  drop_fracture_types: [ST]
+  image_mode: rotated                  # or "fixed": every row uses the un-rotated image of its patient
+  tabular_features: []
+  cache_dir: ../.cache

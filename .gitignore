@@ -1,0 +1,44 @@
+# Input data (patient images and clinical table): keep only the README.
+# Anchored with a leading "/" so the code package src/femur_fx/data/ is NOT ignored.
+/data/*
+!/data/README.md
+# Private copy of the data README with dataset-specific names (also covered by /data/* above).
+/data/README_private.md
+
+# Private tests (e.g. checks of your own model designs): never commit.
+/tests/private/
+
+# Private experiment configs (designs, tuned settings): never commit.
+# configs/example.yaml is the public template.
+/configs/experiments/
+
+# Private dataset settings (file names, excluded patients): never commit.
+# configs/data.example.yaml is the public template.
+/configs/data.yaml
+
+# Pipeline outputs and caches
+outputs/
+.cache/
+logs/
+saved_models/
+*.pkl
+*.joblib
+*.keras
+*.npz
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+
+# Editors / OS
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

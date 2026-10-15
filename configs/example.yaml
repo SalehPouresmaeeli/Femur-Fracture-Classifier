@@ -1,0 +1,32 @@
+# Example experiment: copy this file into configs/experiments/ to create your own.
+# configs/experiments/ is git-ignored, so your experiments stay private.
+#
+#   python -m femur_fx run configs/example.yaml
+#
+# Every section is optional except `name` and `model`; settings not given here
+# come from configs/data.yaml and the defaults in src/femur_fx/config.py.
+base: data.yaml
+name: example
+description: "Random forest on the images, evaluated with 5-fold cross-validation grouped by patient."
+
+# data:
+#   tabular_features: [Age, BMI]                 # columns of the table to add as features
+
+# preprocessing:
+#   smote: {sampling_strategy: auto}             # balance the classes in the training data
+#   denoise: {method: median, disk_radius: 1}    # median (disk_radius) | wiener (window) |
+#                                                # nl_means (h_coef, patch_size, patch_distance)
+#   lbp: {method: uniform}                       # replace pixels by texture features
+
+model:
+  type: random_forest                            # knn | random_forest | cnn
+  params: {}                                     # classifier arguments, e.g. {n_neighbors: 5} for knn
+
+# search:                                        # optional hyper-parameter search before evaluation
+#   kind: grid
+#   scoring: f1_weighted
+#   param_grid: {clf__max_depth: [null, 20]}
+
+evaluation:
+  strategy: group_kfold                          # or group_shuffle_split with seeds: [...]
+  n_splits: 5

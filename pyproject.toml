@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "femur_fx"
+version = "0.1.0"
+description = "Femur fracture-type classification (neck vs trochanteric)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.9",
+    "scikit-learn>=1.3",
+    "imbalanced-learn>=0.11",
+    "scikit-image>=0.21",
+    "PyWavelets>=1.4",
+    "vtk>=9.2",
+    "openpyxl>=3.1",
+    "pyyaml>=6.0",
+    "matplotlib>=3.5",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+cnn = ["tensorflow>=2.15"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+femur_fx = "femur_fx.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["femur_fx*"]
+
+[tool.pytest.ini_options]
+# The package must be installed first (pip install -e .), so tests run against the installed code.
+testpaths = ["tests"]

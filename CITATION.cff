@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software in your work, please cite it as below."
+type: software
+title: "femur-fracture-classifier"
+abstract: >-
+  Config-driven machine-learning pipeline that classifies hip fracture type
+  (neck vs trochanteric) from CT images of the femur combined with clinical features.
+  The methods were developed in 2024; this repository is a refactored, documented
+  release of that work.
+authors:
+  - given-names: Saleh
+    family-names: Pouresmaeeli
+version: "0.1.0"
+date-released: 2026-10-15
+repository-code: "https://github.com/SalehPouresmaeeli/femur-fracture-classifier"
+keywords:
+  - hip fracture
+  - femur
+  - CT
+  - machine learning
+  - classification
