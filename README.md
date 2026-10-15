@@ -1,5 +1,7 @@
 # Femur Fracture Classifier
 
+[![tests](https://github.com/SalehPouresmaeeli/femur-fracture-classifier/actions/workflows/tests.yml/badge.svg)](https://github.com/SalehPouresmaeeli/femur-fracture-classifier/actions/workflows/tests.yml)
+
 Machine-learning pipeline that classifies **hip fracture type** (neck vs trochanteric) from CT images of
 the femur, combined with clinical and load-case features.
 
